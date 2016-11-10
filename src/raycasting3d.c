@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 20:28:40 by sly               #+#    #+#             */
-/*   Updated: 2016/11/07 21:52:19 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/08 20:46:20 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void			generate_texture(t_param *p)
 void			raycasting3d(t_param *p)
 {
 	generate_texture(p);
-	raycasting3d2(p);
+	raycasting(p);
 }

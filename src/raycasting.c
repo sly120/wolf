@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 19:35:55 by sly               #+#    #+#             */
-/*   Updated: 2016/11/07 21:49:48 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/08 21:52:01 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,11 @@ void			raycasting(t_param *p)
 		raycasting_part2(p);
 		raycasting_part3(p);
 		raycasting_part4(p);
-		color(x, p);
+		if (p->option == 0)
+			color(x, p);
+		else
+			color3d(x, p);
 		x++;
 	}
-	manage_time(p);
-	hook(p);
+	raycastingend(p);
 }

@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 19:31:22 by sly               #+#    #+#             */
-/*   Updated: 2016/11/07 21:51:39 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/10 17:10:13 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct			s_param
 	cl_uint				ret_num_devices;
 	cl_uint				ret_num_platforms;
 	cl_int				ret;
+	int					option;
 	char				*source_str;
 	size_t				source_size;
 	int					tablenx;
@@ -90,8 +91,11 @@ typedef struct			s_param
 	int					lineheight;
 	int					drawstart;
 	int					drawend;
-	long				**buffer;
+//	long				**buffer;
 	int					**texture;
+	int					texnum;
+	double				wallx;
+	int					texx;
 }						t_param;
 
 int						**readfile(t_param *p, char *src);
@@ -102,8 +106,9 @@ void					wolf(t_param *p);
 void					wolf3d(t_param *p);
 void					raycasting(t_param *p);
 void					raycasting3d(t_param *p);
-void					raycasting3d2(t_param *p);
+void					raycastingend(t_param *p);
 void					color(int x, t_param *p);
+void					color3d(int x, t_param *p);
 void					manage_time(t_param *p);
 void					hook(t_param *p);
 int						key_event(int key, t_param *p);

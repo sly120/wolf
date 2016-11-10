@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 19:51:18 by sly               #+#    #+#             */
-/*   Updated: 2016/11/01 20:37:11 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/08 19:17:42 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int				main(int argc, char **argv)
 	else
 	{
 		p.map = readfile(&p, "./map/map2.txt");
-		wolf(&p);
+		wolf3d(&p);
 	}
 //	readtab(p.map, &p);
 	return (0);
