@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 21:21:36 by sly               #+#    #+#             */
-/*   Updated: 2016/11/10 17:14:10 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/10 22:13:03 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void			color3d(int x, t_param *p)
 		if (y >= p->drawstart && y <= p->drawend)
 		{
 			d = y * 256 - MAX_Y * 128 + p->lineheight * 128;
-			texy = d * texheight / p->lineheight / 256;
+			texy = ((d * texheight) / p->lineheight) / 256;
 			color = p->texture[p->texnum][texheight * texy + p->texx];
 			if (p->side == 1)
 				color = color >> 1 & 8355711;

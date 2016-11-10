@@ -6,25 +6,25 @@
 #    By: sly <sly@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/09 22:49:58 by sly               #+#    #+#              #
-#    Updated: 2016/11/09 15:27:56 by sly              ###   ########.fr        #
+#    Updated: 2016/11/10 21:26:43 by sly              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = wolf3d
 SRC_PATH = ./src/
-SRC_NAME = main.c			\
-		   color.c			\
-		   color3d.c		\
-		   hook.c			\
-		   key_event.c		\
-		   raycasting.c		\
-		   raycasting3d.c	\
-		   raycastingend.c	\
-		   read1.c			\
-		   read2.c			\
-		   time.c			\
-		   wolf.c			\
-		   wolf3d.c			\
+SRC_NAME = main.c					\
+		   color.c					\
+		   color3d.c				\
+		   hook.c					\
+		   key_event.c				\
+		   raycasting.c				\
+		   raycasting3d.c			\
+		   read1.c					\
+		   read2.c					\
+		   texture_calculation.c	\
+		   time.c					\
+		   wolf.c					\
+		   wolf3d.c					\
 		   quit_program.c
 OBJ_PATH = ./obj/
 INC_PATH = ./include/

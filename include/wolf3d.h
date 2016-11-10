@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 19:31:22 by sly               #+#    #+#             */
-/*   Updated: 2016/11/10 17:10:13 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/10 21:24:59 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,8 @@ void					wolf(t_param *p);
 void					wolf3d(t_param *p);
 void					raycasting(t_param *p);
 void					raycasting3d(t_param *p);
-void					raycastingend(t_param *p);
+//void					raycastingend(t_param *p);
+void					texture_calculation(t_param *p);
 void					color(int x, t_param *p);
 void					color3d(int x, t_param *p);
 void					manage_time(t_param *p);
