@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 19:31:22 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 18:35:58 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 19:02:17 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 #define MAX_SOURCE_SIZE 0X100000
 #define MAX_X 2000
 #define MAX_Y 1100
-#define texwidth 64
-#define texheight 64
+#define TEXWIDTH 64
+#define TEXHEIGHT 64
 
 #define KEY_W 13
 #define KEY_S 1
@@ -35,6 +35,7 @@
 #define KEY_D 2
 #define KEY_ESC 53
 #define KEY_CRTL 256
+#define KEY_SHIFT 257
 
 #define MOTIONNOTIFY 6
 #define POINTERMOTIONMASK (1L<<6)
@@ -100,6 +101,7 @@ typedef struct			s_param
 	double				wallx;
 	int					texx;
 	int					mousex;
+	int					duck;
 }						t_param;
 
 int						**readfile(t_param *p, char *src);

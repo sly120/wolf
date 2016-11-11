@@ -6,13 +6,13 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/22 20:56:25 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 18:25:18 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 19:07:43 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <wolf3d.h>
 
-void			move_forward(t_param *p)
+static void			move_forward(t_param *p)
 {
 	if ((p->map)[(int)(p->posy)][(int)(p->posx + p->dirx * p->movespeed)] == 0)
 		p->posx += p->dirx * p->movespeed;
@@ -20,7 +20,7 @@ void			move_forward(t_param *p)
 		p->posy += p->diry * p->movespeed;
 }
 
-void			move_backward(t_param *p)
+static void			move_backward(t_param *p)
 {
 	if ((p->map)[(int)(p->posy)][(int)(p->posx - p->dirx * p->movespeed)] == 0)
 		p->posx -= p->dirx * p->movespeed;
@@ -28,7 +28,7 @@ void			move_backward(t_param *p)
 		p->posy -= p->diry * p->movespeed;
 }
 
-int				key_event(int key, t_param *p)
+int					key_event(int key, t_param *p)
 {
 //	printf("key : %d\n", key);
 	if (key == KEY_W)
