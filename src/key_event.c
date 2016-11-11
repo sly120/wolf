@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/22 20:56:25 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 19:07:43 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 19:15:21 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ int					key_event(int key, t_param *p)
 		else
 			p->walk = 1;
 	}
+	if (key == KEY_SHIFT)
+		{
+			if (p->duck == 0)
+				p->duck = 70;
+			else
+				p->duck = 0;
+		}
 	raycasting(p);
 	return (0);
 }

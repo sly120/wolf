@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 21:14:10 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 16:33:44 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 19:13:26 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void		texture_calculation(t_param *p)
 	else
 		p->wallx = p->rayposx + p->perpwalldist * p->raydirx;
 	p->wallx -= floor((p->wallx));
-	p->texx = (int)(p->wallx * (double)texwidth);
+	p->texx = (int)(p->wallx * (double)TEXWIDTH);
 	if (p->side == 0 && p->raydirx > 0)
-		p->texx = texwidth - p->texx - 1;
+		p->texx = TEXWIDTH - p->texx - 1;
 	if (p->side == 1 && p->raydiry < 0)
-		p->texx = texwidth - p->texx - 1;
+		p->texx = TEXWIDTH - p->texx - 1;
 }

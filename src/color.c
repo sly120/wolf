@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 19:51:41 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 16:50:45 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 19:14:09 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void			drawvertline(int x, int color, t_param *p)
 	y = 0;
 	while (y < MAX_Y)
 	{
-		if (y >= p->drawstart && y <= p->drawend)
+		if (y >= p->drawstart - p->duck && y <= p->drawend - p->duck)
 		{
 			p->imgad[p->sl * y + 4 * x] = color;
 			p->imgad[p->sl * y + 4 * x + 1] = color >> 8;
