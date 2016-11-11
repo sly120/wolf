@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 19:31:22 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 19:02:17 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 20:15:50 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 #define KEY_S 1
 #define KEY_A 0
 #define KEY_D 2
+#define KEY_ENTER 36
 #define KEY_ESC 53
 #define KEY_CRTL 256
 #define KEY_SHIFT 257
@@ -102,6 +103,7 @@ typedef struct			s_param
 	int					texx;
 	int					mousex;
 	int					duck;
+	int					light;
 }						t_param;
 
 int						**readfile(t_param *p, char *src);

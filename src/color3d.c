@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 21:21:36 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 19:14:28 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 20:08:06 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void			color3d(int x, t_param *p)
 		}
 		else
 		{
-			p->imgad[p->sl * y + 4 * x] = 0;
-			p->imgad[p->sl * y + 4 * x + 1] = 0;
-			p->imgad[p->sl * y + 4 * x + 2] = 0;
+			p->imgad[p->sl * y + 4 * x] = p->light;
+			p->imgad[p->sl * y + 4 * x + 1] = p->light >> 8;
+			p->imgad[p->sl * y + 4 * x + 2] = p->light >> 16;
 		}
 		y++;
 	}
