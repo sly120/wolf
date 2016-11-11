@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 19:31:22 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 12:54:57 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 18:35:58 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@
 #define KEY_D 2
 #define KEY_ESC 53
 #define KEY_CRTL 256
+
+#define MOTIONNOTIFY 6
+#define POINTERMOTIONMASK (1L<<6)
 
 typedef struct			s_param
 {
@@ -96,6 +99,7 @@ typedef struct			s_param
 	int					texnum;
 	double				wallx;
 	int					texx;
+	int					mousex;
 }						t_param;
 
 int						**readfile(t_param *p, char *src);
@@ -113,5 +117,6 @@ void					color3d(int x, t_param *p);
 void					manage_time(t_param *p);
 void					hook(t_param *p);
 int						key_event(int key, t_param *p);
+void					sidestep(int key, t_param *p);
 int						quit_program(t_param *p);
 #	endif

@@ -6,7 +6,7 @@
 #    By: sly <sly@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/09 22:49:58 by sly               #+#    #+#              #
-#    Updated: 2016/11/11 12:53:53 by sly              ###   ########.fr        #
+#    Updated: 2016/11/11 18:42:33 by sly              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC_NAME = main.c					\
 		   raycasting.c				\
 		   read1.c					\
 		   read2.c					\
+		   sidestep.c				\
 		   texture_calculation.c	\
 		   time.c					\
 		   wolf.c					\
@@ -34,7 +35,7 @@ MINILIBX_NAME = -lmlx
 FRAMEWORK = -framework OpenGL -framework AppKit -framework OpenCL
 AR = ar rc
 CC = cc
-CFLAGS += -Wall -Wextra -Werror
+CFLAGS += -Wall -Wextra -Werror -g
 OBJ_NAME = $(SRC_NAME:.c=.o)
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))

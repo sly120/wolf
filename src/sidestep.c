@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key_event.c                                        :+:      :+:    :+:   */
+/*   sidestep.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/22 20:56:25 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 18:25:18 by sly              ###   ########.fr       */
+/*   Created: 2016/11/11 18:21:58 by sly               #+#    #+#             */
+/*   Updated: 2016/11/11 18:41:56 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <wolf3d.h>
 
-void			move_forward(t_param *p)
+static void			rotate_right(t_param *p)
+{
+	p->olddirx = p->dirx;
+	p->dirx = p->diry;
+	p->diry = -p->olddirx;
+	p->oldplanex = p->planex;
+	p->planex = p->planey;
+	p->planey = -p->oldplanex;
+}
+
+static void			rotate_left(t_param *p)
+{
+	p->olddirx = p->dirx;
+	p->dirx = -p->diry;
+	p->diry = p->olddirx;
+	p->oldplanex = p->planex;
+	p->planex = -p->planey;
+	p->planey = p->oldplanex;
+}
+
+static void			move_forward(t_param *p)
 {
 	if ((p->map)[(int)(p->posy)][(int)(p->posx + p->dirx * p->movespeed)] == 0)
 		p->posx += p->dirx * p->movespeed;
@@ -20,32 +40,18 @@ void			move_forward(t_param *p)
 		p->posy += p->diry * p->movespeed;
 }
 
-void			move_backward(t_param *p)
+void				sidestep(int key, t_param *p)
 {
-	if ((p->map)[(int)(p->posy)][(int)(p->posx - p->dirx * p->movespeed)] == 0)
-		p->posx -= p->dirx * p->movespeed;
-	if ((p->map)[(int)(p->posy - p->diry * p->movespeed)][(int)(p->posx)] == 0)
-		p->posy -= p->diry * p->movespeed;
-}
-
-int				key_event(int key, t_param *p)
-{
-//	printf("key : %d\n", key);
-	if (key == KEY_W)
-		move_forward(p);
-	if (key == KEY_S)
-		move_backward(p);
-	if (key == KEY_D || key == KEY_A)
-		sidestep(key, p);
-	if (key == KEY_ESC)
-		quit_program(p);
-	if (key == KEY_CRTL)
+	if (key == KEY_D)
 	{
-		if (p->walk == 1)
-			p->walk = 0.1;
-		else
-			p->walk = 1;
+		rotate_right(p);
+		move_forward(p);
+		rotate_left(p);
 	}
-	raycasting(p);
-	return (0);
+	else
+	{
+		rotate_left(p);
+		move_forward(p);
+		rotate_right(p);
+	}
 }
