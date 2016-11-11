@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 19:51:18 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 19:35:03 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 22:37:55 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,12 +97,12 @@ int				main(int argc, char **argv)
 	mlx_initialization(&p);
 	if (argc == 1)
 	{
-		p.map = readfile(&p, "./map/map.txt");
+		p.map = readfile(&p, "./map/map2.txt");
 		wolf(&p);
 	}
 	else
 	{
-		p.map = readfile(&p, "./map/map.txt");
+		p.map = readfile(&p, "./map/map2.txt");
 		wolf3d(&p);
 	}
 //	readtab(p.map, &p);

@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 19:31:22 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 21:08:01 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 22:22:10 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ typedef struct			s_param
 	int					drawend;
 //	long				**buffer;
 //	int					**texture;
-	t_texture			texture[3];
+	t_texture			texture[8];
 	int					texnum;
 	double				wallx;
 	int					texx;
