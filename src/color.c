@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 19:51:41 by sly               #+#    #+#             */
-/*   Updated: 2016/11/08 21:52:02 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 16:50:45 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void			drawvertline(int x, int color, t_param *p)
 	{
 		if (y >= p->drawstart && y <= p->drawend)
 		{
-			p->imgad[p->sl * y + 4 * x] = color >> 16;
+			p->imgad[p->sl * y + 4 * x] = color;
 			p->imgad[p->sl * y + 4 * x + 1] = color >> 8;
-			p->imgad[p->sl * y + 4 * x + 2] = color;
+			p->imgad[p->sl * y + 4 * x + 2] = color >> 16;
 		}
 		else
 		{

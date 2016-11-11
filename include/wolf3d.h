@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 19:31:22 by sly               #+#    #+#             */
-/*   Updated: 2016/11/10 21:24:59 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 12:54:57 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int						**createtab(t_param *p);
 void					wolf(t_param *p);
 void					wolf3d(t_param *p);
 void					raycasting(t_param *p);
-void					raycasting3d(t_param *p);
+//void					raycasting3d(t_param *p);
 //void					raycastingend(t_param *p);
 void					texture_calculation(t_param *p);
 void					color(int x, t_param *p);

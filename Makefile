@@ -6,7 +6,7 @@
 #    By: sly <sly@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/09 22:49:58 by sly               #+#    #+#              #
-#    Updated: 2016/11/10 21:26:43 by sly              ###   ########.fr        #
+#    Updated: 2016/11/11 12:53:53 by sly              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ SRC_NAME = main.c					\
 		   hook.c					\
 		   key_event.c				\
 		   raycasting.c				\
-		   raycasting3d.c			\
 		   read1.c					\
 		   read2.c					\
 		   texture_calculation.c	\
