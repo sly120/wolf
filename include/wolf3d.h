@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 19:31:22 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 20:15:50 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 21:08:01 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 #define MAX_SOURCE_SIZE 0X100000
 #define MAX_X 2000
 #define MAX_Y 1100
-#define TEXWIDTH 64
-#define TEXHEIGHT 64
+#define TEXWIDTH 128
+#define TEXHEIGHT 128
 
 #define KEY_W 13
 #define KEY_S 1
@@ -40,6 +40,17 @@
 
 #define MOTIONNOTIFY 6
 #define POINTERMOTIONMASK (1L<<6)
+
+typedef struct			s_texture
+{
+	void				*img;
+	char				*imgad;
+	int					height;
+	int					width;
+	int					bpp;
+	int					endian;
+	int					size_line;
+}						t_texture;
 
 typedef struct			s_param
 {
@@ -97,7 +108,8 @@ typedef struct			s_param
 	int					drawstart;
 	int					drawend;
 //	long				**buffer;
-	int					**texture;
+//	int					**texture;
+	t_texture			texture[3];
 	int					texnum;
 	double				wallx;
 	int					texx;

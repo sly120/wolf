@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 21:21:36 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 20:08:06 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 21:28:25 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void			color3d(int x, t_param *p)
 {
 	int			y;
-	int			color;
+//	int			color;
 	int			d;
 	int			texy;
 
@@ -26,12 +26,12 @@ void			color3d(int x, t_param *p)
 		{
 			d = y * 256 - MAX_Y * 128 + p->lineheight * 128;
 			texy = ((d * TEXHEIGHT) / p->lineheight) / 256;
-			color = p->texture[p->texnum][TEXHEIGHT * texy + p->texx];
-			if (p->side == 1)
-				color = (color >> 1) & 8355711;
-			p->imgad[p->sl * y + 4 * x] = color;
-			p->imgad[p->sl * y + 4 * x + 1] = color >> 8;
-			p->imgad[p->sl * y + 4 * x + 2] = color >> 16;
+//			color = p->texture[0].imgad[p->texture[0].size_line * texy + p->texx];
+//			if (p->side == 1)
+//				color = (color >> 1) & 8355711;
+			p->imgad[p->sl * y + 4 * x] = p->texture[0].imgad[p->texture[0].size_line * texy + p->texx];//color;
+			p->imgad[p->sl * y + 4 * x + 1] = p->texture[0].imgad[p->texture[0].size_line * texy + p->texx + 1];// color >> 8;
+			p->imgad[p->sl * y + 4 * x + 2] = p->texture[0].imgad[p->texture[0].size_line * texy + p->texx + 2];// color >> 16;
 		}
 		else
 		{

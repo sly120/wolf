@@ -6,13 +6,13 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 19:50:24 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 19:02:49 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/11 21:06:18 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <wolf3d.h>
 
-void			init_texture(t_param *p)
+/*void			init_texture(t_param *p)
 {
 	int			**texture;
 	int			y;
@@ -56,7 +56,7 @@ void			generate_texture(t_param *p)
 			xorcolor = (x * 256 / TEXWIDTH) ^ (y * 256 / TEXHEIGHT);
 			ycolor = y * 256 / TEXHEIGHT;
 			xycolor = x * 128 / TEXWIDTH + y * 128 / TEXHEIGHT;
-/*			p->texture[0][TEXWIDTH * y + x] = 0x00FF0000;
+			p->texture[0][TEXWIDTH * y + x] = 0x00FF0000;
 			p->texture[1][TEXWIDTH * y + x] = 0x00FF0000;
 			p->texture[2][TEXWIDTH * y + x] = 0x00FF0000;
 			p->texture[3][TEXWIDTH * y + x] = 0x00FF0000;
@@ -64,7 +64,7 @@ void			generate_texture(t_param *p)
     		p->texture[5][TEXWIDTH * y + x] = 0x00FF0000;
     		p->texture[6][TEXWIDTH * y + x] = 0x00FF0000;
     		p->texture[7][TEXWIDTH * y + x] = 0x00FF0000;
-*/			p->texture[0][TEXWIDTH * y + x] = 65536 * 254 * (x != y && x != TEXWIDTH - y); //flat red texture with black cross
+			p->texture[0][TEXWIDTH * y + x] = 65536 * 254 * (x != y && x != TEXWIDTH - y); //flat red texture with black cross
 			p->texture[1][TEXWIDTH * y + x] = xycolor + 256 * xycolor + 65536 * xycolor; //sloped greyscale
 			p->texture[2][TEXWIDTH * y + x] = 256 * xycolor + 65536 * xycolor; //sloped yellow gradient
 			p->texture[3][TEXWIDTH * y + x] = xorcolor + 256 * xorcolor + 65536 * xorcolor; //xor greyscale
@@ -76,11 +76,18 @@ void			generate_texture(t_param *p)
 		}
 		x++;
 	}
+}*/
+
+void			generate_texture(t_param *p)
+{
+	if (!(p->texture[0].img = mlx_xpm_file_to_image(p->mlx, "./texture/mur.xpm", &p->texture[0].width, &p->texture[0].height)))
+		exit(1);
+	p->texture[0].imgad = mlx_get_data_addr(p->texture[0].img, &p->texture[0].bpp, &p->texture[0].size_line, &p->texture[0].endian);
 }
 
 void			wolf3d(t_param *p)
 {
-	init_values3d(p);
+//	init_values3d(p);
 	generate_texture(p);
 	raycasting(p);
 }
