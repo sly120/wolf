@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/22 19:05:09 by sly               #+#    #+#             */
-/*   Updated: 2016/11/12 20:48:39 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/12 20:51:01 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void		display_legend(t_param *p)
 	mlx_string_put(p->mlx, p->win, 170, 0, 0x0000FFFF, "shift: duck");
 	mlx_string_put(p->mlx, p->win, 170, 15, 0x0000FFFF, "ctrl: run/walk");
 	mlx_string_put(p->mlx, p->win, 170, 30, 0x0000FFFF, "enter: change light");
-	mlx_string_put(p->mlx, p->win, 170, 45, 0x0000FFFF, "space: hide legend");
+	mlx_string_put(p->mlx, p->win, 170, 45, 0x0000FFFF, "space: hide legends");
 }
 
 void			hook(t_param *p)
@@ -48,7 +48,7 @@ void			hook(t_param *p)
 	mlx_clear_window(p->mlx, p->win);
 	mlx_put_image_to_window(p->mlx, p->win, p->img, 0, 0);
 	p->legend ? display_legend(p) : mlx_string_put(p->mlx, p->win, 0, 0,
-			0x0000FFFF, "legend : space");
+			0x0000FFFF, "legends: space");
 	mlx_hook(p->win, 2, 1, key_event, p);
 	mlx_hook(p->win, 17, 17, quit_program, p);
 	mlx_hook(p->win, MOTIONNOTIFY, POINTERMOTIONMASK, turn, p);
