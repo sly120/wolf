@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/22 20:56:25 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 20:17:29 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/12 18:40:27 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ static void			key_event2(int key, t_param *p)
 				p->duck = 70;
 			else
 				p->duck = 0;
+		if (p->walk == 1)
+			p->walk = 0.1;
 		}
 	if (key == KEY_ENTER)
 	{

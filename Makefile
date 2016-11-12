@@ -6,7 +6,7 @@
 #    By: sly <sly@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/09 22:49:58 by sly               #+#    #+#              #
-#    Updated: 2016/11/11 18:42:33 by sly              ###   ########.fr        #
+#    Updated: 2016/11/12 18:57:28 by sly              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,6 @@ SRC_NAME = main.c					\
 		   texture_calculation.c	\
 		   time.c					\
 		   wolf.c					\
-		   wolf3d.c					\
 		   quit_program.c
 OBJ_PATH = ./obj/
 INC_PATH = ./include/
