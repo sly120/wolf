@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/22 20:56:25 by sly               #+#    #+#             */
-/*   Updated: 2016/11/12 18:40:27 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/12 20:44:39 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ static void			move_backward(t_param *p)
 static void			key_event2(int key, t_param *p)
 {
 	if (key == KEY_SHIFT)
-		{
-			if (p->duck == 0)
-				p->duck = 70;
-			else
-				p->duck = 0;
+	{
+		if (p->duck == 0)
+			p->duck = 70;
+		else
+			p->duck = 0;
 		if (p->walk == 1)
 			p->walk = 0.1;
-		}
+	}
 	if (key == KEY_ENTER)
 	{
 		if (p->light == 0)
@@ -46,11 +46,17 @@ static void			key_event2(int key, t_param *p)
 		else
 			p->light = 0;
 	}
+	if (key == KEY_SPACE)
+	{
+		if (p->legend == 0)
+			p->legend = 1;
+		else
+			p->legend = 0;
+	}
 }
 
 int					key_event(int key, t_param *p)
 {
-//	printf("key : %d\n", key);
 	if (key == KEY_W)
 		move_forward(p);
 	if (key == KEY_S)
@@ -66,7 +72,7 @@ int					key_event(int key, t_param *p)
 		else
 			p->walk = 1;
 	}
-	if (key == KEY_SHIFT || key == KEY_ENTER)
+	if (key == KEY_SHIFT || key == KEY_ENTER|| key == KEY_SPACE)
 		key_event2(key, p);
 	raycasting(p);
 	return (0);

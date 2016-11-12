@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 19:31:22 by sly               #+#    #+#             */
-/*   Updated: 2016/11/12 18:59:35 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/12 20:27:25 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,6 @@ typedef struct			s_param
 	int					lineheight;
 	int					drawstart;
 	int					drawend;
-//	long				**buffer;
-//	int					**texture;
 	t_texture			texture[8];
 	int					texnum;
 	double				wallx;
@@ -117,6 +115,7 @@ typedef struct			s_param
 	int					mousex;
 	int					duck;
 	int					light;
+	int					legend;
 }						t_param;
 
 int						**readfile(t_param *p, char *src);
@@ -124,10 +123,7 @@ int						open_file(char *src);
 char					*copy_src(char *src, int i);
 int						**createtab(t_param *p);
 void					wolf(t_param *p);
-void					wolf3d(t_param *p);
 void					raycasting(t_param *p);
-//void					raycasting3d(t_param *p);
-//void					raycastingend(t_param *p);
 void					texture_calculation(t_param *p);
 void					color(int x, t_param *p);
 void					color3d(int x, t_param *p);

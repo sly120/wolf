@@ -6,13 +6,13 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 19:51:41 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 20:08:21 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/12 19:39:17 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <wolf3d.h>
 
-void			drawvertline(int x, int color, t_param *p)
+static void		drawvertline(int x, int color, t_param *p)
 {
 	int			y;
 

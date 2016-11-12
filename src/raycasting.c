@@ -6,7 +6,7 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 19:35:55 by sly               #+#    #+#             */
-/*   Updated: 2016/11/11 21:38:59 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/12 19:44:44 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,9 @@ static void			raycasting_part4(t_param *p)
 		p->drawend = MAX_Y - 1;
 }
 
-void			raycasting(t_param *p)
+void				raycasting(t_param *p)
 {
-	int			x;
+	int				x;
 
 	x = 0;
 	while (x < MAX_X)

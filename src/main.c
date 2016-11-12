@@ -6,55 +6,13 @@
 /*   By: sly <sly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 19:51:18 by sly               #+#    #+#             */
-/*   Updated: 2016/11/12 19:07:05 by sly              ###   ########.fr       */
+/*   Updated: 2016/11/12 19:38:39 by sly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <wolf3d.h>
 
-void			ocl_init(t_param *p)
-{
-	p->device_id = NULL;
-	p->context = NULL;
-	p->command_queue = NULL;
-	p->memobj = NULL;
-	p->program = NULL;
-	p->kernel = NULL;
-	p->platform_id = NULL;
-}
-
-void			ocl_load_source(t_param *p)
-{
-	int			fd;
-
-	fd = open("./src/wolf.cl", O_RDONLY);
-	if (fd == -1)
-	{
-		ft_putendl_fd("Failed to load kernel.", 2);
-		exit(1);
-	}
-	p->source_str = (char*)malloc(MAX_SOURCE_SIZE);
-	p->source_size = read(fd, p->source_str, MAX_SOURCE_SIZE);
-//	printf("source_size : %lu\n", source_size);
-	close(fd);
-}
-
-void			ocl_prepare(t_param *p)
-{
-	p->ret = clGetPlatformIDs(1, &p->platform_id, &p->ret_num_platforms);
-	p->ret = clGetDeviceIDs(p->platform_id, CL_DEVICE_TYPE_GPU, 1,
-			&p->device_id, &p->ret_num_devices);
-	p->context = clCreateContext(NULL, 1, &p->device_id, NULL, NULL, &p->ret);
-	p->command_queue = clCreateCommandQueue(p->context, p->device_id, 0,
-			&p->ret);
-	p->program = clCreateProgramWithSource(p->context, 1,
-			(const char **)&p->source_str,
-			(const size_t *)&p->source_size, &p->ret);
-	p->ret = clBuildProgram(p->program, 1, &p->device_id, NULL, NULL, NULL);
-	p->kernel = clCreateKernel(p->program, "hello", &p->ret);
-}
-
-void			mlx_initialization(t_param *p)
+static void		mlx_initialization(t_param *p)
 {
 	p->mlx = mlx_init();
 	p->win = mlx_new_window(p->mlx, MAX_X, MAX_Y, "Wolf3D");
@@ -67,37 +25,14 @@ void			mlx_initialization(t_param *p)
 	}
 }
 
-/*void			readtab(int **tab, t_param *p)
-{
-	int			x;
-	int			y;
-
-	printf("map :\n");
-	y = 0;
-	while (y < p->tableny)
-	{
-		x = 0;
-		while (x < p->tablenx)
-		{
-			ft_putstr(ft_itoa(tab[y][x++]));
-			ft_putstr(" ");
-		}
-		ft_putstr("\n");
-		y++;
-	}
-}*/
-
 int				main(int argc, char **argv)
 {
 	t_param		p;
 
-	ocl_init(&p);
-	ocl_load_source(&p);
-	ocl_prepare(&p);
 	mlx_initialization(&p);
-	p.map = readfile(&p, "./map/map2.txt");
 	p.option = (argc == 1) ? 0 : 1;
+	p.map = (p.option) ? readfile(&p, "./map/map2.txt") :
+		readfile(&p, "./map/map.txt");
 	wolf(&p);
-//	readtab(p.map, &p);
 	return (0);
 }

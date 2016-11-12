@@ -6,7 +6,7 @@
 #    By: sly <sly@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/09 22:49:58 by sly               #+#    #+#              #
-#    Updated: 2016/11/12 18:57:28 by sly              ###   ########.fr        #
+#    Updated: 2016/11/12 19:28:24 by sly              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ SRC_NAME = main.c					\
 		   raycasting.c				\
 		   read1.c					\
 		   read2.c					\
+		   read3.c					\
+		   read4.c					\
 		   sidestep.c				\
 		   texture_calculation.c	\
 		   time.c					\
